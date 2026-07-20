@@ -159,7 +159,6 @@ Generate an installation command that registers the endpoint with Tenable Cloud.
 
 Inside Tenable Cloud, I created a new Nessus Agent installation command and customized it with my Agent Group information.
 
-### Screenshot
 
 <img width="1908" height="959" alt="Screenshot 2026-07-19 at 3 53 48 PM" src="https://github.com/user-attachments/assets/1368d8c2-c7f3-4847-bf1d-6d6b9359e78b" />
 
