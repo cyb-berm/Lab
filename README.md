@@ -115,8 +115,6 @@ I configured a **Triggered Basic Agent Scan** and associated it with the newly c
 
 I also selected a trigger filename that would later initiate the scan "start.txt".
 
-### Screenshot
-
 <img width="1512" height="822" alt="Screenshot 2026-07-19 at 11 37 05 AM" src="https://github.com/user-attachments/assets/716bbf12-490f-4c3e-9cf9-ff7d5b37de90" />
 
 
@@ -141,8 +139,6 @@ I connected to the Linux virtual machine using SSH.
 ```bash
 ssh username@IP-ADDRESS
 ```
-
-### Screenshot
 
 <img width="1903" height="957" alt="Screenshot 2026-07-19 at 3 32 38 PM" src="https://github.com/user-attachments/assets/5070d08f-39d6-4581-84f9-f3802c04adb9" />
 
@@ -194,7 +190,6 @@ sudo -i
 curl -H 'X-Key: XXXXXXX' https://sensor.cloud.tenable.com/install/... | bash
 ```
 
-### Screenshot
 
 <img width="1902" height="957" alt="Screenshot 2026-07-19 at 3 59 02 PM" src="https://github.com/user-attachments/assets/83d6f2b6-9368-4ad8-bf2d-002ff6bb82bf" />
 
@@ -252,8 +247,6 @@ cd /opt/nessus_agent/var/nessus/triggers
 ls -lasht
 ```
 
-### Screenshot
-
 <img width="770" height="265" alt="Screenshot 2026-07-19 at 4 28 31 PM" src="https://github.com/user-attachments/assets/afca2234-a4a4-4021-99ea-b1a3a5a773e9" />
 
 
@@ -297,7 +290,6 @@ Review vulnerabilities discovered by the Nessus scan.
 
 After the scan completed, I reviewed the vulnerability report and analyzed the discovered findings.
 
-### Screenshot
 
 <img width="1860" height="899" alt="Screenshot 2026-07-19 at 4 45 53 PM" src="https://github.com/user-attachments/assets/2414077d-5d7c-4725-ad63-3eb3d612f1ab" />
 
@@ -331,8 +323,6 @@ I monitored the Linux system using the `top` command.
 ```bash
 top
 ```
-
-### Screenshot
 
 ### Key Takeaway
 
