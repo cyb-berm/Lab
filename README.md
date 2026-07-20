@@ -46,8 +46,6 @@ The objective of this lab is to gain hands-on experience deploying endpoint secu
 - SSH
 - Bash
 - Virtual Machine
-- Git
-- GitHub
 
 ---
 
@@ -75,9 +73,7 @@ I provisioned a Linux VM and created a secure administrator account using a stro
 
 This ensures the endpoint is properly secured before connecting it to the Tenable platform.
 
-### Screenshot
-
-![Linux VM](images/01-linux-vm-created.png)
+<img width="1512" height="788" alt="1" src="https://github.com/user-attachments/assets/ec0bfc97-9d77-4b65-8a6d-036c43cc6772" />
 
 ### Key Takeaway
 
@@ -97,9 +93,9 @@ Within the Tenable Cloud portal, I created a new Nessus Agent Group.
 
 The agent group allows multiple endpoints to be centrally managed and scanned together.
 
-### Screenshot
 
-![Agent Group](images/02-agent-group.png)
+<img width="1512" height="828" alt="Screenshot 2026-07-19 at 11 18 36 AM" src="https://github.com/user-attachments/assets/e6645bbe-7142-4067-bd7c-3f33df899bbc" />
+
 
 ### Key Takeaway
 
