@@ -113,11 +113,12 @@ Create a scan that can be manually triggered from the endpoint.
 
 I configured a **Triggered Basic Agent Scan** and associated it with the newly created Agent Group.
 
-I also selected a trigger filename that would later initiate the scan.
+I also selected a trigger filename that would later initiate the scan "start.txt".
 
 ### Screenshot
 
-![Triggered Scan](images/03-triggered-scan.png)
+<img width="1512" height="822" alt="Screenshot 2026-07-19 at 11 37 05 AM" src="https://github.com/user-attachments/assets/716bbf12-490f-4c3e-9cf9-ff7d5b37de90" />
+
 
 ### Key Takeaway
 
@@ -143,7 +144,8 @@ ssh username@IP-ADDRESS
 
 ### Screenshot
 
-![SSH Login](images/04-ssh-login.png)
+<img width="1903" height="957" alt="Screenshot 2026-07-19 at 3 32 38 PM" src="https://github.com/user-attachments/assets/5070d08f-39d6-4581-84f9-f3802c04adb9" />
+
 
 ### Key Takeaway
 
@@ -163,7 +165,8 @@ Inside Tenable Cloud, I created a new Nessus Agent installation command and cust
 
 ### Screenshot
 
-![Installation Command](images/05-install-command.png)
+<img width="1908" height="959" alt="Screenshot 2026-07-19 at 3 53 48 PM" src="https://github.com/user-attachments/assets/1368d8c2-c7f3-4847-bf1d-6d6b9359e78b" />
+
 
 ### Key Takeaway
 
@@ -193,7 +196,8 @@ curl -H 'X-Key: XXXXXXX' https://sensor.cloud.tenable.com/install/... | bash
 
 ### Screenshot
 
-![Installing Agent](images/06-agent-install.png)
+<img width="1902" height="957" alt="Screenshot 2026-07-19 at 3 59 02 PM" src="https://github.com/user-attachments/assets/83d6f2b6-9368-4ad8-bf2d-002ff6bb82bf" />
+
 
 ### Key Takeaway
 
@@ -219,7 +223,8 @@ touch /opt/nessus_agent/var/nessus/triggers/start.txt
 
 ### Screenshot
 
-![Trigger File](images/07-trigger-file.png)
+<img width="967" height="143" alt="Screenshot 2026-07-19 at 4 02 52 PM" src="https://github.com/user-attachments/assets/92ba907d-180c-46a3-a1c4-661ef2864a47" />
+
 
 ### Key Takeaway
 
@@ -249,7 +254,8 @@ ls -lasht
 
 ### Screenshot
 
-![Trigger Removed](images/08-trigger-disappeared.png)
+<img width="770" height="265" alt="Screenshot 2026-07-19 at 4 28 31 PM" src="https://github.com/user-attachments/assets/afca2234-a4a4-4021-99ea-b1a3a5a773e9" />
+
 
 ### Key Takeaway
 
@@ -269,7 +275,8 @@ I navigated to the Nessus Agents page and verified my endpoint appeared online.
 
 ### Screenshot
 
-![Agent Registered](images/09-agent-online.png)
+<img width="1565" height="38" alt="Screenshot 2026-07-19 at 4 40 59 PM" src="https://github.com/user-attachments/assets/d171e142-eac3-494a-9bc9-b03fb42f2176" />
+
 
 ### Verification
 
@@ -292,7 +299,8 @@ After the scan completed, I reviewed the vulnerability report and analyzed the d
 
 ### Screenshot
 
-![Results](images/10-results.png)
+<img width="1860" height="899" alt="Screenshot 2026-07-19 at 4 45 53 PM" src="https://github.com/user-attachments/assets/2414077d-5d7c-4725-ad63-3eb3d612f1ab" />
+
 
 ### Information Reviewed
 
@@ -325,8 +333,6 @@ top
 ```
 
 ### Screenshot
-
-![Top Command](images/11-top.png)
 
 ### Key Takeaway
 
