@@ -1,71 +1,410 @@
-<h1> Scanning for Vulnerabilities with Tenable Nessus Agent (Linux) </h1>
+# 🔍 Scanning for Vulnerabilities with Tenable Nessus Agent (Linux)
 
- ###
+---
 
-<h2> Lab Description & Objectives </h2>
-In this lab, I will demonstrate how to deploy a Tenable Nessus Agent on a Linux virtual machine, connect it to the Tenable Cloud platform, and perform an agent-based vulnerability assessment. The objective is to identify security vulnerabilities on a Linux endpoint without relying on traditional network scans....
-<br />
+## 📖 Overview
 
+This project demonstrates how to deploy a **Tenable Nessus Agent** on a Linux virtual machine, connect it to the Tenable Cloud platform, and perform an **agent-based vulnerability assessment**.
 
-<h2> Skills Demonstrated </h2>
+The objective of this lab is to gain hands-on experience deploying endpoint security software, initiating vulnerability scans, analyzing findings, and understanding how organizations continuously monitor systems for security risks.
 
-- <b> Linux Administration
+---
+
+# 🎯 Objectives
+
+- Provision a Linux Virtual Machine
+- Configure a Nessus Agent Group
+- Deploy a Nessus Agent
+- Connect the endpoint to Tenable Cloud
+- Trigger a vulnerability scan
+- Analyze scan results
+- Document findings
+- Remove lab resources
+
+---
+
+# 🛠 Skills Demonstrated
+
+- Linux Administration
 - SSH Remote Access
 - Vulnerability Management
-- Tenable Nessus
-- Agent-Based Security Monitoring
+- Endpoint Security
 - Cloud Security
 - Bash
+- Security Monitoring
+- Risk Assessment
 - Cybersecurity Documentation
-- Troubleshooting </b> 
-- <b>Diskpart</b>
+- Troubleshooting
 
-<h2>Environments Used </h2>
+---
 
-- <b>Linux Virtual Machine
-- Tenable.io / Tenable Cloud
+# 💻 Technologies Used
+
+- Ubuntu Linux
+- Tenable.io
 - Nessus Agent
 - SSH
 - Bash
-- Virtual Machine</b> (21H2)
+- Virtual Machine
+- Git
+- GitHub
 
-<h2>Step 1 — Provision a Linux Virtual Machine</h2>
+---
 
-<p align="center">
-Launch the utility: <br/>
+# 🖥 Lab Environment
 
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+| Component | Description |
+|------------|-------------|
+| Operating System | Ubuntu Linux |
+| Scanner | Nessus Agent |
+| Platform | Tenable Cloud |
+| Access Method | SSH |
+| Shell | Bash |
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
+---
+
+# 🚀 Step 1 – Provision a Linux Virtual Machine
+
+## Objective
+
+Create a Linux virtual machine that will serve as the endpoint for vulnerability scanning.
+
+## What I Did
+
+I provisioned a Linux VM and created a secure administrator account using a strong password rather than the default credentials.
+
+This ensures the endpoint is properly secured before connecting it to the Tenable platform.
+
+### Screenshot
+
+![Linux VM](images/01-linux-vm-created.png)
+
+### Key Takeaway
+
+Using strong credentials is a basic but essential security control.
+
+---
+
+# 🚀 Step 2 – Create a Nessus Agent Group
+
+## Objective
+
+Create an Agent Group to organize managed endpoints.
+
+## What I Did
+
+Within the Tenable Cloud portal, I created a new Nessus Agent Group.
+
+The agent group allows multiple endpoints to be centrally managed and scanned together.
+
+### Screenshot
+
+![Agent Group](images/02-agent-group.png)
+
+### Key Takeaway
+
+Agent Groups simplify vulnerability management across multiple systems.
+
+---
+
+# 🚀 Step 3 – Configure a Triggered Scan
+
+## Objective
+
+Create a scan that can be manually triggered from the endpoint.
+
+## What I Did
+
+I configured a **Triggered Basic Agent Scan** and associated it with the newly created Agent Group.
+
+I also selected a trigger filename that would later initiate the scan.
+
+### Screenshot
+
+![Triggered Scan](images/03-triggered-scan.png)
+
+### Key Takeaway
+
+Triggered scans allow the endpoint itself to initiate vulnerability assessments.
+
+---
+
+# 🚀 Step 4 – Connect to the Linux VM
+
+## Objective
+
+Access the Linux endpoint remotely.
+
+## What I Did
+
+I connected to the Linux virtual machine using SSH.
+
+### Command Used
+
+```bash
+ssh username@IP-ADDRESS
 ```
---!>
+
+### Screenshot
+
+![SSH Login](images/04-ssh-login.png)
+
+### Key Takeaway
+
+SSH provides secure encrypted remote administration of Linux systems.
+
+---
+
+# 🚀 Step 5 – Generate the Nessus Agent Installation Command
+
+## Objective
+
+Generate an installation command that registers the endpoint with Tenable Cloud.
+
+## What I Did
+
+Inside Tenable Cloud, I created a new Nessus Agent installation command and customized it with my Agent Group information.
+
+### Screenshot
+
+![Installation Command](images/05-install-command.png)
+
+### Key Takeaway
+
+The registration key securely links the endpoint to the Tenable Cloud platform.
+
+---
+
+# 🚀 Step 6 – Install the Nessus Agent
+
+## Objective
+
+Install and register the Nessus Agent.
+
+## What I Did
+
+I elevated to root privileges and executed the installation command.
+
+### Commands Used
+
+```bash
+sudo -i
+```
+
+```bash
+curl -H 'X-Key: XXXXXXX' https://sensor.cloud.tenable.com/install/... | bash
+```
+
+### Screenshot
+
+![Installing Agent](images/06-agent-install.png)
+
+### Key Takeaway
+
+The endpoint is now managed through Tenable Cloud.
+
+---
+
+# 🚀 Step 7 – Trigger the Vulnerability Scan
+
+## Objective
+
+Initiate the agent scan.
+
+## What I Did
+
+I manually created the trigger file used by the Nessus Agent.
+
+### Command Used
+
+```bash
+touch /opt/nessus_agent/var/nessus/triggers/start.txt
+```
+
+### Screenshot
+
+![Trigger File](images/07-trigger-file.png)
+
+### Key Takeaway
+
+Creating the trigger file instructs the agent to begin scanning.
+
+---
+
+# 🚀 Step 8 – Verify the Scan Started
+
+## Objective
+
+Verify that the agent accepted the trigger.
+
+## What I Did
+
+I monitored the trigger directory until the trigger file disappeared.
+
+### Commands Used
+
+```bash
+cd /opt/nessus_agent/var/nessus/triggers
+```
+
+```bash
+ls -lasht
+```
+
+### Screenshot
+
+![Trigger Removed](images/08-trigger-disappeared.png)
+
+### Key Takeaway
+
+Once the trigger file disappears, the Nessus Agent has started the vulnerability scan.
+
+---
+
+# 🚀 Step 9 – Verify the Agent in Tenable Cloud
+
+## Objective
+
+Confirm successful registration.
+
+## What I Did
+
+I navigated to the Nessus Agents page and verified my endpoint appeared online.
+
+### Screenshot
+
+![Agent Registered](images/09-agent-online.png)
+
+### Verification
+
+- Agent Name
+- Online Status
+- Registration Date
+- Agent Group
+
+---
+
+# 🚀 Step 10 – Analyze Vulnerability Results
+
+## Objective
+
+Review vulnerabilities discovered by the Nessus scan.
+
+## What I Did
+
+After the scan completed, I reviewed the vulnerability report and analyzed the discovered findings.
+
+### Screenshot
+
+![Results](images/10-results.png)
+
+### Information Reviewed
+
+- Severity Levels
+- CVEs
+- CVSS Scores
+- Vulnerability Descriptions
+- Recommended Remediation
+
+### Key Takeaway
+
+Understanding vulnerability severity helps prioritize remediation efforts.
+
+---
+
+# 🚀 Step 11 – Monitor the Scan
+
+## Objective
+
+Observe the Nessus Agent process.
+
+## What I Did
+
+I monitored the Linux system using the `top` command.
+
+### Command Used
+
+```bash
+top
+```
+
+### Screenshot
+
+![Top Command](images/11-top.png)
+
+### Key Takeaway
+
+Monitoring system processes helps verify the scan is actively running.
+
+---
+
+# 🚀 Step 12 – Cleanup
+
+## What I Did
+
+After completing the lab, I cleaned up all cloud resources.
+
+- Deleted the scan
+- Deleted the Agent Group
+- Unlinked the Nessus Agent
+- Deleted the Linux VM
+
+This prevents unnecessary cloud resources from remaining active.
+
+---
+
+- Verified the installation
+- Restarted the Nessus Agent
+- Waited for synchronization
+- Confirmed the endpoint successfully registered
+
+---
+
+# 🔒 Security Concepts Learned
+
+- Vulnerability Management
+- Agent-Based Scanning
+- Endpoint Security
+- Continuous Monitoring
+- CVEs
+- CVSS Scoring
+- Risk Prioritization
+
+---
+
+# 📚 Lessons Learned
+
+During this lab, I learned how endpoint-based vulnerability scanning differs from traditional network scanning.
+
+I also gained hands-on experience installing and configuring a Nessus Agent, connecting it to Tenable Cloud, triggering scans manually, and analyzing vulnerability data.
+
+This project improved my Linux command-line skills and reinforced the importance of continuous vulnerability management in enterprise environments.
+
+---
+
+# 🚀 Future Improvements
+
+- Deploy multiple endpoints
+- Compare authenticated vs. unauthenticated scans
+- Integrate results with a SIEM
+- Automate deployment using Ansible
+- Practice vulnerability remediation and rescanning
+
+---
+
+# 📌 Skills Demonstrated 
+
+- Vulnerability Management
+- Linux Administration
+- Bash
+- SSH
+- Endpoint Security
+- Tenable Nessus
+- Cloud Security
+- Security Monitoring
+- CVE Analysis
+- Risk Assessment
+- Troubleshooting
+- Technical Documentation
+
+---
